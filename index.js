@@ -1,7 +1,7 @@
 import app from './app.js'
 import { sequelize as conn } from './db.js'
 const port = process.env.PORT || 3001
-import 'dotenv/config'
+import 'dotenv/config.js'
 
 conn
   .sync({ altern: true })

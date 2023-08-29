@@ -1,7 +1,7 @@
 import { Sequelize } from 'sequelize'
 const { DB_DEPLOY } = process.env
 import userModel from './src/models/User.js'
-import 'dotenv/config'
+import 'dotenv/config.js'
 
 const sequelize = new Sequelize(DB_DEPLOY, {
   logging: false, // set to console.log to see the raw SQL queries
