@@ -1,8 +1,8 @@
-const express = require('express')
-const passport = require('passport')
-const { authHandler } = require('../handlers/authHandlers')
+import passport from 'passport'
+import { Router } from 'express'
+import { authHandler } from '../handlers/authHandlers.js'
 
-const authRouter = express.Router()
+const authRouter = Router()
 
 authRouter.post(
   '/login',
@@ -10,4 +10,4 @@ authRouter.post(
   authHandler
 )
 
-module.exports = authRouter
+export default authRouter

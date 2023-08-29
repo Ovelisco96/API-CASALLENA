@@ -1,5 +1,6 @@
-const { config } = require('../config/config')
-const jwt = require('jsonwebtoken')
+import config from '../config/config.js'
+import pkg from 'jsonwebtoken'
+const { sign } = pkg
 
 const authHandler = async (req, res, next) => {
   try {
@@ -8,7 +9,7 @@ const authHandler = async (req, res, next) => {
       sub: user.id,
       mail: user.mail,
     }
-    const token = jwt.sign(payload, config.jwtSecret)
+    const token = sign(payload, config.jwtSecret)
     res.json({
       user,
       token,
@@ -18,4 +19,4 @@ const authHandler = async (req, res, next) => {
   }
 }
 
-module.exports = { authHandler }
+export { authHandler }

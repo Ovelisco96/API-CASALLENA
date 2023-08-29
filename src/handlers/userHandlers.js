@@ -1,4 +1,4 @@
-const { createUser, getUsers } = require('../controllers/usersControllers')
+import { createUser, getUsers } from '../controllers/usersControllers.js'
 
 const signupHandler = async (req, res) => {
   try {
@@ -27,8 +27,4 @@ const getUsersHandler = async (req, res) => {
   }
 }
 
-module.exports = {
-  signupHandler,
-  loginHandler,
-  getUsersHandler,
-}
+export { signupHandler, loginHandler, getUsersHandler }

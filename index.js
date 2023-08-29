@@ -1,7 +1,7 @@
-const app = require('./app.js')
-const { conn } = require('./db.js')
+import app from './app.js'
+import { sequelize as conn } from './db.js'
 const port = process.env.PORT || 3001
-require('dotenv').config()
+import 'dotenv/config'
 
 conn
   .sync({ altern: true })

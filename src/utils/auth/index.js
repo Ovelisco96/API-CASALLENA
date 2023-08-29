@@ -1,9 +1,3 @@
-const passport = require('passport')
+import passport, { use } from 'passport'
 
-const LocalStrategy = require('./strategies/local.strategy')
-const JwtStrategy = require('./strategies/jwt.strategy')
-
-passport.use(LocalStrategy)
-passport.use(JwtStrategy)
-
-module.exports = passport
+export default passport

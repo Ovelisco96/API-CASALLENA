@@ -1,7 +1,7 @@
-const { Sequelize } = require('sequelize')
+import { Sequelize } from 'sequelize'
 const { DB_DEPLOY } = process.env
-const userModel = require('./src/models/User')
-require('dotenv').config()
+import userModel from './src/models/User.js'
+import 'dotenv/config'
 
 const sequelize = new Sequelize(DB_DEPLOY, {
   logging: false, // set to console.log to see the raw SQL queries
@@ -10,7 +10,6 @@ const sequelize = new Sequelize(DB_DEPLOY, {
 
 userModel(sequelize)
 
-module.exports = {
-  ...sequelize.models, // para poder importar los modelos así: const { Product, User, Comment } = require('./db.js');
-  conn: sequelize, // para importart la conexión { conn } = require('./db.js');
-}
+const models = sequelize.models
+
+export { models, sequelize }

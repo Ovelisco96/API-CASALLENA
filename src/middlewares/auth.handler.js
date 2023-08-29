@@ -1,14 +1,14 @@
-const boom = require('@hapi/boom')
+import { unauthorized } from '@hapi/boom'
 
-const { config } = require('./../config/config')
+import config from './../config/config.js'
 
 function checkApiKey(req, res, next) {
   const apiKey = req.headers.api
   if (apiKey === config.apiKey) {
     next()
   } else {
-    next(boom.unauthorized().output.payload)
+    next(unauthorized().output.payload)
   }
 }
 
-module.exports = { checkApiKey }
+export default checkApiKey
