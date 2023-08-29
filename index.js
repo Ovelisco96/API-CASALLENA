@@ -1,7 +1,7 @@
-require('dotenv').config()
 const app = require('./app.js')
 const { conn } = require('./db.js')
 const port = process.env.PORT || 3001
+require('dotenv').config()
 
 conn
   .sync({ altern: true })

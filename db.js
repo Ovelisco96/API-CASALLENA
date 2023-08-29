@@ -1,7 +1,7 @@
-require('dotenv').config()
 const { Sequelize } = require('sequelize')
 const { DB_DEPLOY } = process.env
 const userModel = require('./src/models/User')
+require('dotenv').config()
 
 const sequelize = new Sequelize(DB_DEPLOY, {
   logging: false, // set to console.log to see the raw SQL queries
