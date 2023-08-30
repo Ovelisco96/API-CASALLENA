@@ -1,4 +1,4 @@
-import morgan from 'morgan'
+/* import morgan from 'morgan' */
 import pkg from 'body-parser'
 import express from 'express'
 import passport from 'passport'
@@ -13,7 +13,7 @@ const port = process.env.PORT || 3000
 passport.use(LocalStrategy)
 passport.use(JwtStrategy)
 
-app.use(morgan('dev'))
+/* app.use(morgan('dev')) */
 app.use(json({ limit: '50mb' }))
 app.use('/', mainRouter)
 
