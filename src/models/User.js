@@ -10,7 +10,7 @@ export default (sequelize) => {
         allowNull: false,
         autoIncrement: true,
       },
-      mail: {
+      email: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true,
@@ -19,11 +19,11 @@ export default (sequelize) => {
         type: DataTypes.STRING,
         allowNull: true,
       },
-      first_name: {
+      name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      last_name: {
+      city: {
         type: DataTypes.STRING,
         allowNull: false,
       },

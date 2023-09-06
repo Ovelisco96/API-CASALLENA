@@ -3,7 +3,7 @@ import { sequelize as conn } from './db.js'
 const port = process.env.PORT || 3001
 
 conn
-  .sync({ altern: true })
+  .sync({ altern: false })
   .then(() => {
     app.listen(port, '0.0.0.0', () => {
       console.log(`Server corriendo en el puerto ${port}`)

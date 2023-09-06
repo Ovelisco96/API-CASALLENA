@@ -1,9 +1,13 @@
-import { Sequelize } from 'sequelize'
-import userModel from './src/models/User.js'
+import path from 'path'
 import dotenv from 'dotenv'
-dotenv.config()
+import { Sequelize } from 'sequelize'
+import config from './src/config/config.js'
+import userModel from './src/models/User.js'
+dotenv.config({
+  path: path.resolve('./', process.env.NODE_ENV + '.env'),
+})
 
-const sequelize = new Sequelize(process.env.DB_DEPLOY, {
+const sequelize = new Sequelize(config.dbUrl, {
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 })

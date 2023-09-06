@@ -17,9 +17,9 @@ const createUser = async (data) => {
   return newUser
 }
 
-const findByEmail = async (mail) => {
+const findByEmail = async (email) => {
   const rta = await models.User.findOne({
-    where: { mail },
+    where: { email },
   })
   return rta
 }

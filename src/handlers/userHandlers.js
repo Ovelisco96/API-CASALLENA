@@ -19,8 +19,13 @@ const loginHandler = async (req, res) => {
 }
 
 const getUsersHandler = async (req, res) => {
+  console.log('auquu')
   try {
     const users = await getUsers()
+    console.log(
+      '🚀 ~ file: userHandlers.js:25 ~ getUsersHandler ~ users:',
+      users
+    )
     res.status(200).json(users)
   } catch (error) {
     res.status(400).json({ error: error.message })
