@@ -1,8 +1,6 @@
 import dotenv from 'dotenv'
 import path from 'path'
-dotenv.config({
-  path: path.resolve('./', process.env.NODE_ENV + '.env'),
-})
+dotenv.config()
 
 const config = {
   env: process.env.NODE_ENV || 'dev',
